@@ -6,7 +6,7 @@ import "./assets/main.css";
 
 let app = null;
 
-// if (import.meta.env.NODE_ENV === "development") {
+// if (import.meta.env.NODE_ENV === "development") { // uncomment this if you want the auditor to be visible only in respective env's
 import("vue-axe").then((res) => {
   const VueAxe = res.default;
   const VueAxePopup = res.VueAxePopup;
@@ -16,9 +16,10 @@ import("vue-axe").then((res) => {
   app.use(VueAxe);
   app.use(createPinia());
   app.use(router);
-
   app.mount("#app");
 });
-// } else {
-//   app = createApp(App);
+//  } else {
+//   app = createApp(App)
+// app.mount("#app");
 // }
+
